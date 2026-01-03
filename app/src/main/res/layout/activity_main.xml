@@ -1,0 +1,45 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="HACOR-U Calculator"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/hacorInput"
+            android:hint="HACOR Score"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/sofaInput"
+            android:hint="SOFA Score"
+            android:inputType="number"/>
+
+        <CheckBox android:id="@+id/pneumonia" android:text="Pneumonia"/>
+        <CheckBox android:id="@+id/cpe" android:text="Cardiogenic Pulmonary Edema"/>
+        <CheckBox android:id="@+id/ards" android:text="Pulmonary ARDS"/>
+        <CheckBox android:id="@+id/immuno" android:text="Immunosuppression"/>
+        <CheckBox android:id="@+id/septicShock" android:text="Septic Shock"/>
+
+        <Button
+            android:id="@+id/calcButton"
+            android:text="Calculate HACOR-U"/>
+
+        <TextView
+            android:id="@+id/resultText"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="For clinical decision support only. Not a substitute for physician judgment."
+            android:textSize="12sp"/>
+    </LinearLayout>
+</ScrollView>
