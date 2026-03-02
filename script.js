@@ -133,20 +133,27 @@ function saveToGoogleSheets(hacor, sofa, score, riskText, riskClass) {
   formData.append("entry.1802139191", hr);
   formData.append("entry.252511933", ph);
   formData.append("entry.544567708", pao2);
-  formData.append("entry.513948952", fio2);
-  formData.append("entry.823727167", rr);
-  formData.append("entry.257432552", gcs);
-  formData.append("entry.1405091351", sofa_resp);
-  formData.append("entry.745814873", sofa_coag);
-  formData.append("entry.300443988", sofa_liver);
-  formData.append("entry.876049835", sofa_cardio);
-  formData.append("entry.1357381546", sofa_cns);
-  formData.append("entry.1884124511", sofa_renal);
-  formData.append("entry.1619308833", conditions.join(", "));
-  formData.append("entry.2086858640", hacor);
-  formData.append("entry.1283404738", sofa);
-  formData.append("entry.1288747338", score);
-  formData.append("entry.103885253", riskText);
+  formData.append("entry.823727167", fio2);
+  formData.append("entry.1405091351", rr);
+  formData.append("entry.300443988", gcs);
+
+  formData.append("entry.1357381546", sofa_resp);
+  formData.append("entry.1619308833", sofa_coag);
+  formData.append("entry.2086858640", sofa_liver);
+  formData.append("entry.1283404738", sofa_cardio);
+  formData.append("entry.1288747338", sofa_cns);
+  formData.append("entry.103885253", sofa_renal);
+
+  formData.append("entry.1570793573", conditions[0]);
+    formData.append("entry.91621282", conditions[1]);
+      formData.append("entry.1597306720", conditions[2]);
+        formData.append("entry.1463747276", conditions[3]);
+          formData.append("entry.1911287566", conditions[4]);
+
+  formData.append("entry.1068048428", hacor);
+  formData.append("entry.55898782", sofa);
+  formData.append("entry.1951113748", score);
+  formData.append("entry.1605100109", riskText);
 
   fetch(GOOGLE_FORM_URL, {
     method: "POST",
