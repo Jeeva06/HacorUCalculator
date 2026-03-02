@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HACOR-U Score Calculator</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h1><i class="fa-solid fa-lungs"></i> HACOR-U Score Calculator</h1>
+
+  <!-- Patient Demographics -->
+  <h3><i class="fa-solid fa-user"></i> Patient Information</h3>
+
+  <label>Patient Name</label>
+  <input type="text" id="patientName" placeholder="Enter patient name">
+
+  <label>Gender</label>
+  <select id="patientGender">
+    <option value="">Select gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label>Age</label>
+  <input type="number" id="patientAge" min="0" max="120" placeholder="Enter age">
+
+  <!-- HACOR -->
+  <h3><i class="fa-solid fa-heart-pulse"></i> HACOR Components</h3>
+
+  <label>Heart Rate (bpm)</label>
+  <input type="number" id="hr">
+
+  <label>pH</label>
+  <input type="number" step="0.01" id="ph">
+
+  <label>PaO₂ (mmHg)</label>
+  <input type="number" id="pao2" placeholder="e.g. 68">
+
+  <label>FiO₂</label>
+  <input type="number" id="fio2" step="0.01" min="0.21" max="1.0" placeholder="e.g. 0.50">
+
+  <label>Respiratory Rate</label>
+  <input type="number" id="rr">
+
+  <label>GCS</label>
+  <input type="number" id="gcs">
+
+  <!-- SOFA -->
+  <h3><i class="fa-solid fa-notes-medical"></i> SOFA Components (0–4)</h3>
+
+  <label>Respiratory</label>
+  <input type="number" min="0" max="4" id="sofa_resp">
+
+  <label>Coagulation</label>
+  <input type="number" min="0" max="4" id="sofa_coag">
+
+  <label>Liver</label>
+  <input type="number" min="0" max="4" id="sofa_liver">
+
+  <label>Cardiovascular</label>
+  <input type="number" min="0" max="4" id="sofa_cardio">
+
+  <label>CNS</label>
+  <input type="number" min="0" max="4" id="sofa_cns">
+
+  <label>Renal</label>
+  <input type="number" min="0" max="4" id="sofa_renal">
+
+  <!-- Conditions -->
+  <h3><i class="fa-solid fa-virus"></i> Clinical Conditions</h3>
+
+  <div class="checkbox-group">
+    <label><input type="checkbox" id="pneumonia"> Pneumonia (+2.5)</label>
+    <label><input type="checkbox" id="ards"> Pulmonary ARDS (+3)</label>
+    <label><input type="checkbox" id="septic"> Septic Shock (+2.5)</label>
+    <label><input type="checkbox" id="immuno"> Immunosuppression (+1.5)</label>
+    <label><input type="checkbox" id="cpe"> Cardiogenic Pulmonary Edema (−4)</label>
+  </div>
+
+  <button onclick="calculateHACORU()">Calculate HACOR-U</button>
+
+  <div class="result" id="resultBox">
+    <p><strong>HACOR:</strong> <span id="hacor">—</span></p>
+    <p><strong>SOFA:</strong> <span id="sofa">—</span></p>
+    <p><strong>HACOR-U:</strong> <span id="score">—</span></p>
+    <p><strong>Risk:</strong> <span id="risk">—</span></p>
+  </div>
+
+  <div class="disclaimer">
+    For clinical decision support only.
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
